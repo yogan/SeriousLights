@@ -158,6 +158,7 @@
             this.Name = "MainForm";
             this.Text = "Serious Lights";
             this.Load += new System.EventHandler(this.OnLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blueBar)).EndInit();

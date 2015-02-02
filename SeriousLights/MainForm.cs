@@ -13,12 +13,14 @@ namespace SeriousLights
     public partial class MainForm : Form
     {
         private LedStrip myStrip;
+        private SerialCommunication mySerialCommunication;
 
         public MainForm()
         {
             InitializeComponent();
 
             myStrip = new LedStrip(10);
+            mySerialCommunication = new SerialCommunication();
         }
 
         private void OnLoad(object sender, EventArgs e)
@@ -27,14 +29,21 @@ namespace SeriousLights
             ledComboBox.SelectedIndex = 0;
         }
 
-        private void OnColorBarScroll(object sender, EventArgs e)
+        private void OnFormClosing(Object sender, FormClosingEventArgs e)
         {
-            UpdateColorPanel();
+            mySerialCommunication.Close();
         }
 
-        private void UpdateColorPanel()
+        private void OnColorBarScroll(object sender, EventArgs e)
         {
-            colorPanel.BackColor = Color.FromArgb(redBar.Value, greenBar.Value, blueBar.Value);
+            var color = Color.FromArgb(redBar.Value, greenBar.Value, blueBar.Value);
+            UpdateColorPanel(color);
+            mySerialCommunication.Write(color);
+        }
+
+        private void UpdateColorPanel(Color color)
+        {
+            colorPanel.BackColor = color;
         }
     }
 }
