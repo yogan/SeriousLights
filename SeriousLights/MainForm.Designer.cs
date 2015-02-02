@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ledComboBox = new System.Windows.Forms.ComboBox();
             this.colorPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blueBar)).BeginInit();
@@ -131,11 +131,11 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(533, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 2;
+            this.ledComboBox.FormattingEnabled = true;
+            this.ledComboBox.Location = new System.Drawing.Point(533, 12);
+            this.ledComboBox.Name = "comboBox1";
+            this.ledComboBox.Size = new System.Drawing.Size(121, 24);
+            this.ledComboBox.TabIndex = 2;
             // 
             // colorPanel
             // 
@@ -152,7 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 501);
             this.Controls.Add(this.colorPanel);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ledComboBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Name = "MainForm";
@@ -178,7 +178,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar blueBar;
         private System.Windows.Forms.TrackBar greenBar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ledComboBox;
         private System.Windows.Forms.Panel colorPanel;
     }
 }

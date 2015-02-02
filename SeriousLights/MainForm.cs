@@ -23,7 +23,8 @@ namespace SeriousLights
 
         private void OnLoad(object sender, EventArgs e)
         {
-            comboBox1.Items.AddRange(myStrip.Led.ToArray());
+            ledComboBox.Items.AddRange(myStrip.Led.ToArray());
+            ledComboBox.SelectedIndex = 0;
         }
 
         private void OnColorBarScroll(object sender, EventArgs e)
