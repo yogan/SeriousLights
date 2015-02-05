@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ledComboBox = new System.Windows.Forms.ComboBox();
             this.colorPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blueBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenBar)).BeginInit();
@@ -129,11 +130,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Red";
             // 
-            // comboBox1
+            // ledComboBox
             // 
             this.ledComboBox.FormattingEnabled = true;
             this.ledComboBox.Location = new System.Drawing.Point(533, 12);
-            this.ledComboBox.Name = "comboBox1";
+            this.ledComboBox.Name = "ledComboBox";
             this.ledComboBox.Size = new System.Drawing.Size(121, 24);
             this.ledComboBox.TabIndex = 2;
             // 
@@ -146,19 +147,30 @@
             this.colorPanel.Size = new System.Drawing.Size(35, 35);
             this.colorPanel.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(533, 163);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Send";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 501);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.colorPanel);
             this.Controls.Add(this.ledComboBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Name = "MainForm";
             this.Text = "Serious Lights";
-            this.Load += new System.EventHandler(this.OnLoad);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OnFormClosing);
+            this.Load += new System.EventHandler(this.OnLoad);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.blueBar)).EndInit();
@@ -181,6 +193,7 @@
         private System.Windows.Forms.TrackBar greenBar;
         private System.Windows.Forms.ComboBox ledComboBox;
         private System.Windows.Forms.Panel colorPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

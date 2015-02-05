@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO.Ports;
 
 namespace SeriousLights
@@ -20,8 +19,33 @@ namespace SeriousLights
 
         public void Write(Color color)
         {
-            byte[] colorBytes = new[] { color.R, color.G, color.B };
-            mySerialPort.Write(colorBytes, 0, 3);
+            WriteBytesToPort(CreateColorCommand(color));
+            
+            WriteBytesToPort(CreateLedCommand(0));
+            WriteBytesToPort(CreateLedCommand(2));
+            WriteBytesToPort(CreateLedCommand(10));
+
+            WriteBytesToPort(CreateApplyCommand());
+        }
+
+        private byte[] CreateApplyCommand()
+        {
+            return new[] { (byte)'a' };
+        }
+
+        private byte[] CreateColorCommand(Color color)
+        {
+            return new[] { (byte)'c', color.R, color.G, color.B };
+        }
+
+        private byte[] CreateLedCommand(int i)
+        {
+            return new[] { (byte)'l', (byte)i };
+        }
+
+        private void WriteBytesToPort(byte[] bytes)
+        {
+            mySerialPort.Write(bytes, 0, bytes.Length);
         }
 
         public void Close()

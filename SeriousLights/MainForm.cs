@@ -38,12 +38,17 @@ namespace SeriousLights
         {
             var color = Color.FromArgb(redBar.Value, greenBar.Value, blueBar.Value);
             UpdateColorPanel(color);
-            mySerialCommunication.Write(color);
+            //mySerialCommunication.Write(color);
         }
 
         private void UpdateColorPanel(Color color)
         {
             colorPanel.BackColor = color;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            mySerialCommunication.Write(colorPanel.BackColor);
         }
     }
 }
